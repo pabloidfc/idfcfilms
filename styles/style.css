@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+i {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid red;
+}
+.header__title {
+    margin-bottom: 0;
+    color: var(--sunshine);
+}
+.header__subtitle {
+    color: var(--text-bright);
+}
+
+.search-bar-section {
+    display: flex;
+}
+.search-bar-section__btn {
+    background: var(--background);
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+}
+.trending__header {
+
+}
