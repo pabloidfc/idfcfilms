@@ -1,0 +1,14 @@
+{
+  "name": "idfcfilms",
+  "version": "1.0.0",
+  "description": "Curso Práctico de Consumo de API REST con JavaScript. Utilizando la api de TheMovieDB",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Pablo Rodriguez",
+  "license": "MIT"
+}

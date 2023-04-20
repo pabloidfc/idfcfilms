@@ -1,0 +1,7 @@
+function loadSpanishLanguage() {
+
+}
+
+function loadEnglishLanguage() {
+
+}
