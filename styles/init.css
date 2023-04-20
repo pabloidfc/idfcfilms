@@ -377,6 +377,7 @@
   select,
   button,
   textarea {
+    appearance: none;
     -webkit-appearance: none;
   }
   
@@ -711,7 +712,6 @@
   
   ::-webkit-scrollbar-track {
     background: #161f27;
-    background: var(--background);
     border-radius: 6px;
   }
   
