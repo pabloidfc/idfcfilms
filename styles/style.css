@@ -56,6 +56,28 @@ i {
     background: var(--background);
 }
 
+.movies-container {
+    position: relative;
+}
+.movies-container__movie {
+    min-height: 270px;
+    max-height: 270px;
+    max-width: 180px;
+
+
+    border-radius: 8px;
+}
+.movies-container__desc {
+    text-align: center;
+}
+.movies-container__title {
+    font-weight: bold;
+}
+.movies-container__score {
+    font-weight: bold;
+    color: var(--sunshine);
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -86,7 +108,7 @@ i {
     display: flex;
     padding: 10px;
     gap: 10px;
-    max-height: 300px;
+    max-height: 400px;
     max-width: 100%;
 
     overflow-x: scroll;

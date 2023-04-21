@@ -1,10 +1,10 @@
-function loadHomepage() {
+async function loadHomepage() {
     headerSearchBarContainer.classList.remove("d-none");
     trendingSectionContainer.classList.remove("d-none");
     categoriesSectionContainer.classList.remove("d-none");
 
-    const movies = getTrendingMoviesPreview();
-    printMoviesInContainer(movies, container);
+    const movies = await getTrendingMoviesPreview();
+    printMoviesInContainer(movies, trendingMoviesPreviewContainer, true);
 }
 
 function loadTrendsPage() {
