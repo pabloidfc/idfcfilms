@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    loadTextsInSpanish();
     loadLanguage();
+    navigator();
 });
 
 window.addEventListener("hashchange", navigator);
