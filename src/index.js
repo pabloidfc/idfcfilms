@@ -4,3 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("hashchange", navigator);
+trendingSeeMoreBtn.addEventListener("click", () => {
+    location.hash = "#trends";
+});

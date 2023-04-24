@@ -3,6 +3,8 @@ async function loadHomepage() {
     trendingSectionContainer.classList.remove("d-none");
     categoriesSectionContainer.classList.remove("d-none");
 
+    genericSectionContainer.classList.add("d-none");
+
     const movies = await getTrendingMoviesPreview();
     const categories = await getCategoriesPreview();
     printMoviesInContainer(movies, trendingMoviesPreviewContainer, true);
@@ -10,15 +12,20 @@ async function loadHomepage() {
 }
 
 function loadTrendsPage() {
+    genericSectionContainer.classList.remove("d-none");
+
     headerSearchBarContainer.classList.add("d-none");
     trendingSectionContainer.classList.add("d-none");
     categoriesSectionContainer.classList.add("d-none");
+
+    genericSectionTitle.innerHTML = trendingTitleText;
 }
 
 function loadMoviePage() {
     headerSearchBarContainer.classList.add("d-none");
     trendingSectionContainer.classList.add("d-none");
     categoriesSectionContainer.classList.add("d-none");
+    genericSectionContainer.classList.add("d-none");
 }
 
 function loadSearchPage() {

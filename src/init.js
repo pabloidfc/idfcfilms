@@ -15,6 +15,9 @@ const categoriesSectionContainer = document.querySelector("#categories-section")
 const categoriesSectionTitle = document.querySelector(".categories-preview__title");
 const categoriesSectionPreviewContainer = document.querySelector(".categories-preview__container");
 
+const genericSectionContainer = document.querySelector("#generic-section");
+const genericSectionTitle = document.querySelector(".generic-section__title");
+
 const api = axios.create({
     baseURL: "https://api.themoviedb.org/3/",
     headers: {

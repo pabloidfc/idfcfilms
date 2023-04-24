@@ -1,2 +1,14 @@
+@media screen and (min-width: 430px) {
+    .generic-section__content {
+        justify-content: center;
+    }
+    .generic-section__content > .image-skeleton {
+        /* width: 180px;
+        height: 270px; */
+        height: 270px;
+        flex-basis: 180px;
+    }
+}
+
 @media screen and (min-width: 960px) {
 }
