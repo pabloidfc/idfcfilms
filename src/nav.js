@@ -4,7 +4,9 @@ async function loadHomepage() {
     categoriesSectionContainer.classList.remove("d-none");
 
     const movies = await getTrendingMoviesPreview();
+    const categories = await getCategoriesPreview();
     printMoviesInContainer(movies, trendingMoviesPreviewContainer, true);
+    printCategoriesInContainer(categories, categoriesSectionPreviewContainer, true);
 }
 
 function loadTrendsPage() {

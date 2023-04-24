@@ -28,10 +28,10 @@ i {
 }
 
 .header, 
-.categories-section,
+.categories-preview,
 .trending-section__btn,
 .trending-section__header,
-.categories-section__header {
+.categories-preview__header {
     margin-left: 10px;
 }
 
@@ -121,11 +121,28 @@ i {
     background: var(--background);
 }
 
-.categories-section__preview {
+.categories-preview__container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     max-width: 1100px;
+}
+.categories-preview__category {
+    padding: 0;
+    width: 120px;
+    height: 40px;
+
+    font-size: .8em;
+    font-weight: bold;
+    border-radius: 6px;
+    background: var(--variable);
+}
+.categories-preview__category:hover {
+    transform: scaleX(1.1);
+    background: var(--variable);
+}
+.categories-preview__category:focus {
+    box-shadow: none;
 }
 
 .d-none {
