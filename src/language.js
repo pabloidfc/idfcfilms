@@ -1,10 +1,12 @@
-let headerSubtitleText = "find your favorite movies here!";
-let headerSearchBarPlaceholderText = "Avengers...";
-let trendingTitleText = "Trending movies";
-let trendingSeeMoreBtnText = "See more";
-let categoriesSectionTitleText = "Categories";
+let headerSubtitleText;
+let headerSearchBarPlaceholderText;
+let trendingTitleText;
+let trendingSeeMoreBtnText;
+let categoriesSectionTitleText;
 
 function loadTextsInSpanish() {
+    lang = "es";
+
     headerSubtitleText = "encuentra tus películas favoritas aquí!"
     headerSearchBarPlaceholderText = "Vengadores..."
     trendingTitleText = "Películas en tendencia";
@@ -13,6 +15,8 @@ function loadTextsInSpanish() {
 }
 
 function loadTextsInEnglish() {
+    lang = "en";
+
     headerSubtitleText = "find your favorite movies here!";
     headerSearchBarPlaceholderText = "Avengers..."
     trendingTitleText = "Trending movies";

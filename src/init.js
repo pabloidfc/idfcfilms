@@ -19,14 +19,14 @@ const genericSectionContainer = document.querySelector("#generic-section");
 const genericSectionContentContainer = document.querySelector(".generic-section__content");
 const genericSectionTitle = document.querySelector(".generic-section__title");
 
-const api = axios.create({
+let api = axios.create({
     baseURL: "https://api.themoviedb.org/3/",
     headers: {
         'Content-Type': "application/json;charset=utf-8",
     },
     params: {
         'api_key': KEY,
-        'language': lang
+        'language': lang,
     },
 });
 
@@ -73,6 +73,10 @@ function printCategoriesInContainer(categories, container, clean = false) {
 
     for (const category of categories) {
         const categoryContainer = document.createElement("button");
+        categoryContainer.addEventListener("click", (e) => {
+            location.hash = "#category=" + e.target.id;
+        });
+        categoryContainer.setAttribute("id", category.id + "-" + category.name );
         categoryContainer.classList.add("categories-preview__category");
         categoryContainer.innerHTML = category.name;
         categoriesFragment.appendChild(categoryContainer);
@@ -82,19 +86,42 @@ function printCategoriesInContainer(categories, container, clean = false) {
 }
 
 async function getTrendingMovies() {
-    const { data } = await api('trending/movie/day');
+    const { data } = await api('trending/movie/day', {
+        params: {
+            'language': lang,
+        }
+    });
     const movies = data.results;
     return movies;
 }
 
 async function getTrendingMoviesPreview() {
-    const { data } = await api('trending/movie/day');
+    const { data } = await api('trending/movie/day', {
+        params: {
+            'language': lang
+        }
+    });
     const movies = data.results;
     return movies;
 }
 
 async function getCategoriesPreview() {
-    const { data } = await api('genre/movie/list');
+    const { data } = await api('genre/movie/list', {
+        params: {
+            'language': lang
+        }
+    });
     const categories = data.genres;
     return categories;
+}
+
+async function getMoviesByCategoryID(id) {
+    const { data } = await api('discover/movie', {
+        params: {
+          with_genres: id,
+          'language': lang
+        },
+    });
+    const movies = data.results;
+    return movies;
 }

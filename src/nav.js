@@ -31,15 +31,27 @@ function loadMoviePage() {
 }
 
 function loadSearchPage() {
+    genericSectionContainer.classList.remove("d-none");
+    
     headerSearchBarContainer.classList.add("d-none");
     trendingSectionContainer.classList.add("d-none");
-    categoriesSectionContainer.classList.add("d-none");
+    categoriesSectionContainer.classList.add("d-none");    
 }
 
-function loadCategoryPage() {
+async function loadCategoryPage() {
+    genericSectionContainer.classList.remove("d-none");
+
     headerSearchBarContainer.classList.add("d-none");
     trendingSectionContainer.classList.add("d-none");
     categoriesSectionContainer.classList.add("d-none");
+
+    const [hash, categoryIDAndName] = location.hash.split("=");
+    const [categoryID, categoryName] = categoryIDAndName.split("-");
+
+    genericSectionTitle.innerHTML = categoryName;
+
+    const movies = await getMoviesByCategoryID(categoryID);
+    printMoviesInContainer(movies, genericSectionContentContainer, true);
 }
 
 function navigator() {
