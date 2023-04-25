@@ -11,7 +11,7 @@ async function loadHomepage() {
     printCategoriesInContainer(categories, categoriesSectionPreviewContainer, true);
 }
 
-function loadTrendsPage() {
+async function loadTrendsPage() {
     genericSectionContainer.classList.remove("d-none");
 
     headerSearchBarContainer.classList.add("d-none");
@@ -19,6 +19,8 @@ function loadTrendsPage() {
     categoriesSectionContainer.classList.add("d-none");
 
     genericSectionTitle.innerHTML = trendingTitleText;
+    const movies = await getTrendingMovies();
+    printMoviesInContainer(movies, genericSectionContentContainer, true);
 }
 
 function loadMoviePage() {

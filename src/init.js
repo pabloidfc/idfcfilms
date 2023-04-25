@@ -16,6 +16,7 @@ const categoriesSectionTitle = document.querySelector(".categories-preview__titl
 const categoriesSectionPreviewContainer = document.querySelector(".categories-preview__container");
 
 const genericSectionContainer = document.querySelector("#generic-section");
+const genericSectionContentContainer = document.querySelector(".generic-section__content");
 const genericSectionTitle = document.querySelector(".generic-section__title");
 
 const api = axios.create({
@@ -78,6 +79,12 @@ function printCategoriesInContainer(categories, container, clean = false) {
     }
 
     container.appendChild(categoriesFragment);
+}
+
+async function getTrendingMovies() {
+    const { data } = await api('trending/movie/day');
+    const movies = data.results;
+    return movies;
 }
 
 async function getTrendingMoviesPreview() {
