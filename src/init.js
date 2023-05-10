@@ -2,9 +2,11 @@ let lang = "en";
 const IMAGE_URL_300 = "https://image.tmdb.org/t/p/w300/";
 const IMAGE_URL_500 = "https://image.tmdb.org/t/p/w500/";
 
+const headerTitle = document.querySelector(".header__title");
 const headerSubtitle = document.querySelector(".header__subtitle");
 const headerSearchBarContainer = document.querySelector(".search-bar-section");
 const headerSearchBar = document.querySelector(".search-bar-section__search-bar");
+const headerSearchBarBtn = document.querySelector(".search-bar-section__btn");
 
 const trendingSectionContainer = document.querySelector("#trending-section");
 const trendingTitle = document.querySelector(".trending-section__title");

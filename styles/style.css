@@ -89,6 +89,7 @@ i {
 .header__title {
     margin-bottom: 0;
     line-height: 1.4rem;
+    user-select: none;
     color: var(--sunshine);
 }
 .header__subtitle {
@@ -99,6 +100,10 @@ i {
 
 .search-bar-section {
     display: flex;
+}
+.search-bar-section__search-bar {
+    width: 100%;
+    max-width: 800px;
 }
 .search-bar-section__btn {
     background: var(--background);
