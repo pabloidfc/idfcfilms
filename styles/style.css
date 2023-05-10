@@ -20,6 +20,10 @@ i {
     margin: 0;
 }
 
+.fa-star {
+    color: var(--sunshine);
+}
+
 .footer {
     text-align: center;
     width: 100%;
@@ -68,8 +72,8 @@ i {
     max-height: 270px;
     max-width: 180px;
 
-
     border-radius: 8px;
+    transition: all .3s ease;
 }
 .movies-container__desc {
     text-align: center;
@@ -80,6 +84,9 @@ i {
 .movies-container__score {
     font-weight: bold;
     color: var(--sunshine);
+}
+.movies-container__icon {
+    margin-left: 2px;
 }
 
 .header {

@@ -57,6 +57,10 @@ function printMoviesInContainer(movies, container, clean = false) {
         movieScore.classList.add("movies-container__score");
         movieScore.innerHTML = movie.vote_average.toFixed(1);
 
+        const movieScoreIcon = document.createElement("i");
+        movieScoreIcon.classList.add("movies-container__icon", "fa-solid", "fa-star");
+
+        movieScore.appendChild(movieScoreIcon);
         movieDescriptionContainer.appendChild(movieTitle);
         movieDescriptionContainer.appendChild(movieScore);
         moviesContainer.appendChild(movieImage);
@@ -128,7 +132,7 @@ async function getMoviesByCategoryID(id) {
     return movies;
 }
 
-async function getMoviesBySearch(query) {
+async function getMoviesBySearchQuery(query) {
     const { data } = await api("search/movie", {
         params: {
             "query": query,

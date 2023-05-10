@@ -17,4 +17,8 @@
     .trending-section__preview {
         border-radius: 8px;
     }
+
+    .movies-container__movie:hover {
+        transform: scale(1.04);
+    }
 }

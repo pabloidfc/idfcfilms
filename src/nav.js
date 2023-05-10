@@ -50,12 +50,21 @@ function loadMoviePage() {
     genericSectionContainer.classList.add("d-none");
 }
 
-function loadSearchPage() {
+async function loadSearchPage() {
     genericSectionContainer.classList.remove("d-none");
+    headerSearchBarContainer.classList.remove("d-none");
     
-    headerSearchBarContainer.classList.add("d-none");
     trendingSectionContainer.classList.add("d-none");
-    categoriesSectionContainer.classList.add("d-none");    
+    categoriesSectionContainer.classList.add("d-none");   
+    
+    let [, userQuery] = location.hash.split("="); // the first value is unnecessary
+
+    genericSectionTitle.innerHTML = searchByQuerySectionTitleText;
+
+    if (userQuery.includes("%20")) userQuery = userQuery.replace("%20", " ");
+
+    const movies = await getMoviesBySearchQuery(userQuery);
+    printMoviesInContainer(movies, genericSectionContentContainer, true);
 }
 
 async function loadCategoryPage() {
@@ -65,7 +74,7 @@ async function loadCategoryPage() {
     trendingSectionContainer.classList.add("d-none");
     categoriesSectionContainer.classList.add("d-none");
 
-    const [hash, categoryIDAndName] = location.hash.split("=");
+    const [, categoryIDAndName] = location.hash.split("="); // the first value is unnecessary
     const [categoryID, categoryName] = categoryIDAndName.split("-");
 
     genericSectionTitle.innerHTML = categoryName;

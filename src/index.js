@@ -13,5 +13,5 @@ headerTitle.addEventListener("click", () => {
 });
 headerSearchBarBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    location.hash = "$search=" + headerSearchBar.value;
+    location.hash = "#search=" + headerSearchBar.value;
 });
