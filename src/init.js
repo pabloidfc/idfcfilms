@@ -1,6 +1,6 @@
+let lang = "en";
 const IMAGE_URL_300 = "https://image.tmdb.org/t/p/w300/";
 const IMAGE_URL_500 = "https://image.tmdb.org/t/p/w500/";
-let lang = "en";
 
 const headerSubtitle = document.querySelector(".header__subtitle");
 const headerSearchBarContainer = document.querySelector(".search-bar-section");
@@ -118,9 +118,20 @@ async function getCategoriesPreview() {
 async function getMoviesByCategoryID(id) {
     const { data } = await api('discover/movie', {
         params: {
-          with_genres: id,
+          "with_genres": id,
           'language': lang
         },
+    });
+    const movies = data.results;
+    return movies;
+}
+
+async function getMoviesBySearch(query) {
+    const { data } = await api("search/movie", {
+        params: {
+            "query": query,
+            'language': lang
+          },
     });
     const movies = data.results;
     return movies;

@@ -1,3 +1,23 @@
+function navigator() {
+    scrollTo(0, 0);
+
+    const sections = {
+        "#trends":     () => loadTrendsPage(),
+        "#movie=":     () => loadMoviePage(),
+        "#search=":    () => loadSearchPage(),
+        "#category=":  () => loadCategoryPage()
+    }
+
+    for (const key in sections) {
+        if(location.hash.startsWith(key)) {
+            sections[key]();
+            return;
+        }
+    }
+
+    loadHomepage();
+}
+
 async function loadHomepage() {
     headerSearchBarContainer.classList.remove("d-none");
     trendingSectionContainer.classList.remove("d-none");
@@ -52,24 +72,4 @@ async function loadCategoryPage() {
 
     const movies = await getMoviesByCategoryID(categoryID);
     printMoviesInContainer(movies, genericSectionContentContainer, true);
-}
-
-function navigator() {
-    scrollTo(0, 0);
-
-    const sections = {
-        "#trends":     () => loadTrendsPage(),
-        "#movie=":     () => loadMoviePage(),
-        "#search=":    () => loadSearchPage(),
-        "#category=":  () => loadCategoryPage()
-    }
-
-    for (const key in sections) {
-        if(location.hash.startsWith(key)) {
-            sections[key]();
-            return;
-        }
-    }
-
-    loadHomepage();
 }
